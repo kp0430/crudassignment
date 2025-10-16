@@ -44,6 +44,15 @@ Future<List<Map<String, dynamic>>> queryAllRows() async
 {
 return await _db.query(table);
 }
+// Query one row only by using ID as parameter
+Future<Map<String,dynamic>?> queryById(int id) async {
+  final results = await _db.query(
+    table,
+    where: '$columnId = ?',
+    whereArgs: [id]
+  );
+  return results.isNotEmpty ? results.first: null;
+}
 // All of the methods (insert, query, update, delete) can also be done using
 // raw SQL commands. This method uses a raw query to give the row count.
 Future<int> queryRowCount() async {
