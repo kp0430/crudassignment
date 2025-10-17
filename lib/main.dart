@@ -43,7 +43,7 @@ children: <Widget>[
 ElevatedButton(
 onPressed: _insert,
 style: ElevatedButton.styleFrom(
-  backgroundColor: Colors.blueAccent,
+  backgroundColor: Colors.green,
   padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 30),
   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
 
@@ -52,6 +52,16 @@ child: const Text('insert'),
 ),
 const SizedBox(height: 10),
 
+ElevatedButton(
+onPressed: _update,
+style: ElevatedButton.styleFrom(
+  backgroundColor: Colors.green,
+  padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 30),
+  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
+),
+child: const Text('update'),
+),
+const SizedBox(height: 20),
 ElevatedButton(
 onPressed: _query,
 style: ElevatedButton.styleFrom(
@@ -63,6 +73,7 @@ style: ElevatedButton.styleFrom(
 ),
 child: const Text('query'),
 ),
+const SizedBox(height: 10),
 
 ElevatedButton(
 onPressed: () => _queryById(context),
@@ -74,29 +85,34 @@ style: ElevatedButton.styleFrom(
 ),
 child: const Text('queryById'),
 ),
-const SizedBox(height: 10),
+const SizedBox(height: 20),
 
-const SizedBox(height: 10),
 
-ElevatedButton(
-onPressed: _update,
-style: ElevatedButton.styleFrom(
-  backgroundColor: Colors.blueAccent,
-  padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 30),
-  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
-),
-child: const Text('update'),
-),
-const SizedBox(height: 10),
+
+
+
 ElevatedButton(
 onPressed: _delete,
 style: ElevatedButton.styleFrom(
-  backgroundColor: Colors.blueAccent,
+  backgroundColor: Colors.redAccent,
   padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 30),
   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
 
 ),
 child: const Text('delete'),
+),
+const SizedBox(height: 10),
+
+
+ElevatedButton(
+onPressed: dbHelper.deleteAll,
+style: ElevatedButton.styleFrom(
+  backgroundColor: Colors.redAccent,
+  padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 30),
+  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))
+
+),
+child: const Text('deleteAll'),
 ),
 ],
 ),
